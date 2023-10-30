@@ -6,3 +6,9 @@
 .off_disclaimer a {
   margin-left: 5px;
 }
+
+
+.off_disclaimer p{
+  margin-left: 5px;
+  font-style: italic;
+}
