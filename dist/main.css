@@ -156,6 +156,12 @@
 }
 
 
+.off_disclaimer p{
+  margin-left: 5px;
+  font-style: italic;
+}
+
+
 .nutriscore__detail {
   display: block;
   max-width: 100px;
@@ -358,7 +364,7 @@ table {
 }
 
 body {
-  font-family: 'GeosansLight', Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
   max-width: 680px;
   margin: 0 auto;
 }
