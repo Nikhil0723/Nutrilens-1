@@ -1,8 +1,9 @@
 .history__list {
   flex: 1;
-  width: 90%;
+  width: 100%;
   max-height: 100%;
   overflow: auto;
+
 }
 
 .history__listItem {
@@ -10,6 +11,9 @@
   position: relative;
   padding: 10px;
   transition: box-shadow 0.2s ease-in-out;
+  margin: 20px 0px;
+  border-bottom: 1px solid #E1E1E1;
+
 }
 
 .history__listItem:hover {
@@ -64,10 +68,11 @@
 .history__emptyState {
   text-align: center;
   padding: 0 40px;
-  margin-top: 60%;
+  margin-top: 20%;
 }
 
 .history__emptyState__title {
+  margin-top: 60px;
   font-size: 24px;
 }
 
@@ -80,4 +85,9 @@
   border: none;
   background: none;
   cursor: pointer;
+}
+
+.Smallp {
+  font-size: 16px;
+  margin-top: 10px;
 }

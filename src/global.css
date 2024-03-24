@@ -10,7 +10,10 @@ body {
   font-family: Helvetica, sans-serif;
   max-width: 680px;
   margin: 0 auto;
-}
+  background: linear-gradient(to bottom, #fff9e1, #91b0ff); /* Your gradient colors */
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+  }
 
 p {
   margin-bottom: 10px;

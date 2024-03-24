@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import ArrowRight from 'react-feather/dist/icons/arrow-right';
 import Trash2 from 'react-feather/dist/icons/trash-2';
 import HistoryHandler from './historyHandler';
+import { LuScanLine } from "react-icons/lu";
 
 import './historyDisplay.css';
 
@@ -20,8 +21,10 @@ const HistoryDisplay = () => {
     <div className="history__list">
       {products === null ?
         <div className="history__emptyState">
+          <LuScanLine size={200}/>
           <h2 className="history__emptyState__title">
-            Scan some products to see them here! <span role="img" aria-label="egg">🥚</span>
+            Scan some products to see them here!
+            <p  aria-label="egg">Click on the Scan Button to scan</p>
           </h2>
         </div>
         :

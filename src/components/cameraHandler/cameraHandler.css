@@ -6,6 +6,7 @@
 .cameraHandler__message {
   padding: 0 20px;
   text-align: center;
+  margin-top: 60px;
   font-size: 30px;
   line-height: 1.2;
 }

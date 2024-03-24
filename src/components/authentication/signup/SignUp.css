@@ -1,0 +1,72 @@
+.auth-register{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+a{
+    text-decoration: none;
+}
+.register-head{
+    margin-bottom: 30px;
+}
+.register-head p{
+font-size: 13px;
+}
+.register-head a{
+    font-size:13px ;
+    font-weight: 600;
+}
+.register-form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.row{
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+}
+.input-container{
+    display: flex;
+    flex-direction: column;
+   gap: 10px;
+}
+.input-container label{
+font-size: 10px;
+font-weight: 800;
+color: #6d768b;
+}
+.input-container input{
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 15px;
+    border: 1px solid #d9e2ef;
+    border-radius: 30px;
+    color: #506690;
+    outline-width: 0.1px ;
+    outline-color:#6a4cfdcc ;
+    width: 100%;
+}
+
+.register-footer{
+    display: flex;
+    align-items: center;
+    justify-content:end;
+}
+.register-footer button{
+    padding: 10px 20px;
+    display: flex;
+    background-color: #6a4cfdcc;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 30px;
+ }
+
+ @media only screen and (max-width: 778px){
+    .row{
+        display: flex;
+        flex-direction: column;
+    }
+ }
