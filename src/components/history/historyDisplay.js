@@ -24,7 +24,7 @@ const HistoryDisplay = () => {
           <LuScanLine size={200}/>
           <h2 className="history__emptyState__title">
             Scan some products to see them here!
-            <p  aria-label="egg">Click on the Scan Button to scan</p>
+            <p className="Smallp" aria-label="egg">Click on the Scan Button to scan</p>
           </h2>
         </div>
         :
