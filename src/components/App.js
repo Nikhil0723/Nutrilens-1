@@ -10,7 +10,8 @@ import Login from './authentication/login/Login';
 import AuthLayout from './authLayout/AuthLayout';
 
 const App = () => {
-  const [loggedIn, setLoggedIn] = useState(false)
+  const [loggedIn, setLoggedIn] = useState(localStorage.getItem('token')? true : false);
+  
   return(
   <>
   { loggedIn ?

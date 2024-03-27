@@ -23,6 +23,7 @@
   "author": "Moises Gonzalez <moigonzit@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "axios": "^1.6.8",
     "quagga": "^0.12.1",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
