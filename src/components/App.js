@@ -8,6 +8,7 @@ import { Route } from 'react-router-dom';
 import SignUp from './authentication/signup/SignUp';
 import Login from './authentication/login/Login';
 import AuthLayout from './authLayout/AuthLayout';
+import Auth from './authentication/auth/Auth';
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(localStorage.getItem('token')? true : false);
@@ -22,11 +23,11 @@ const App = () => {
   </div>
   
   :
-  <div>
+  <div className='main__wrapper'>
     <Switch>
-          <Route exact path='/'component={AuthLayout} />
-          <Route exact path='/login' component={Login} />
-          <Route exact path='/signup' component={SignUp} />
+          <Route exact path='/'component={Auth} />
+          {/* <Route exact path='/login' component={Login} />
+          <Route exact path='/signup' component={SignUp} /> */}
   </Switch>
   </div>
     }
