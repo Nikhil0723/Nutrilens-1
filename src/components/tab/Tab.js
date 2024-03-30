@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import Camera from 'react-feather/dist/icons/camera';
 import Clock from 'react-feather/dist/icons/clock';
 
-import './footer.css';
+import './tab.css';
 
-const Footer = () => (
+const Tab = () => (
   <div className="footer">
     <Link className="footer__link" to="/" >
       <Camera />
@@ -19,4 +19,4 @@ const Footer = () => (
   </div>
 );
 
-export default Footer;
+export default Tab;

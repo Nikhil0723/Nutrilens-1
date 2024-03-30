@@ -4,6 +4,7 @@
     font-family: 'Poppins', sans-serif;
     color: white; 
     display: flex;
+    overflow-y: hidden;
 }
 .auth-container::-webkit-scrollbar {
     display: none;

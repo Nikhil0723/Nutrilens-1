@@ -4,7 +4,8 @@ import './header.css';
 
 const Header = () => (
   <header className="header">
-    <h1 className="header__title">Nutrilens, Uncovering food sercets <span role="img" aria-label="shopping cart">🛒</span></h1>
+    
+    <button >About us</button>
     <button onClick={()=>{
       localStorage.removeItem('token');
       window.location.href = '/';
