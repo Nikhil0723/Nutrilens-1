@@ -5,7 +5,7 @@ export default function Footer() {
     <div className='footer'>
         <hr />
 
-        <h2>Licensed under The MIT License (MIT)</h2>
+        <h2>Licensed under The MIT License </h2>
 
     </div>
   )
