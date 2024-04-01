@@ -23,8 +23,8 @@
   "author": "Moises Gonzalez <moigonzit@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@types/react-router-dom": "^5.3.3",
     "axios": "^1.6.8",
-    "npm": "^10.5.0",
     "quagga": "^0.12.1",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",

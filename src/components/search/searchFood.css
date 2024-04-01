@@ -1,0 +1,27 @@
+.searchPage_Wrapper {
+    position: relative;
+    margin: 2.5rem 0;
+    flex: 1;
+    width: 640px;
+}
+
+.searchPage_Container {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchFood_FormField {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchFood_Input {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    background-color: #e5e7eb;
+    border: 1px solid #1f2937;
+    border-radius: 0.25rem;
+    margin-right: 1.5rem;
+    color: black;
+}
