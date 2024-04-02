@@ -1,59 +1,120 @@
-import React, { useEffect, useState } from 'react';
-import "./searchFood.css";
+import React, { useState } from 'react';
+import axios from 'axios';
+import './searchFood.css'
 
-function SearchFood() {
-    const [food, setFood] = useState("");
-    const [foodResult, setFoodResult] = useState({});
+const YOUR_API_KEY = '2qWlMeegtqlWFPlWavAvyg==LNeJinKJ2suLEVbE'; // Replace with your actual API key
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const fetchNutritionData = async () => {
-            const url = `https://bonhappetee-food-nutrition-api.p.rapidapi.com/Prod/search?confidence=.9&value=${food}&page=1`;
-            const options = {
-                method: 'GET',
-                headers: {
-                    'x-api-key': `${food}`, // Replace 'YOUR-API-KEY' with your actual RapidAPI key
-                    'X-RapidAPI-Key': 'a09455f271msh2c87042c87251bcp1c2b55jsned7f19a6a9d3',
-                    'X-RapidAPI-Host': 'bonhappetee-food-nutrition-api.p.rapidapi.com',
-                }
-            };
+export default function GetData() {
+    const [query, setQuery] = useState('');
+    const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
 
-            try {
-                const response = await fetch(url, options);
-                const result = await response.json();
-                setFoodResult(result);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-
-        fetchNutritionData();
+    const handleInputChange = (event) => {
+        setQuery(event.target.value);
     };
 
-    console.log(foodResult);
+    const fetchData = async () => {
+        try {
+            setLoading(true);
+            const response = await axios.get('https://api.calorieninjas.com/v1/nutrition', {
+                params: { query },
+                headers: { 'X-Api-Key': YOUR_API_KEY }
+            });
+            setItems(response.data.items);
+            console.log(response.data.items) // Set items array from response data
+            setLoading(false);
+        } catch (error) {
+            setError(error.message);
+            setLoading(false);
+        }
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        fetchData();
+    };
 
     return (
         <div className='searchPage_Wrapper'>
             <div className='searchPage_Container'>
-                <form
-                    className='searchFood_FormField'
-                    onSubmit={handleSubmit}
-                >
+                <form onSubmit={handleSubmit} className='searchFood_FormField'>
                     <input
                         className='searchFood_Input'
-                        type='text'
-                        required
-                        value={food}
-                        onChange={(e) => setFood(e.target.value)}
-                    />
-
-                    <button type='submit'>
-                        Search Food
-                    </button>
+                        type="text"
+                        placeholder="Enter your query"
+                        value={query}
+                        onChange={handleInputChange} />
+                    <button type="submit" className='search_btn'>Get Nutrition</button>
                 </form>
             </div>
-        </div>
-    )
-}
 
-export default SearchFood;
+            <div className='results'>
+
+
+                {items.map((item, index) => (
+                  
+                     <div className='result_card '>
+                        <div className=' result_head'>
+                            <h1>{item.name}
+                            </h1>
+                            
+                                <p className='total_weight'>{item.serving_size_g}g</p>
+                            
+                        </div>
+                       
+                        <div className='result_content'>
+                             <p className='title'>Nutrition Information</p>
+                            <div className='nutrition_Information '>
+                            <div >
+                                <p>Calories:</p>
+                                <p>{item.calories}</p>
+                            </div>
+                            <div >
+                                <p>Carbohydrates:</p>
+                                <p>{item.carbohydrates_total_g}g</p>
+                            </div>
+                            <div >
+                                <p>Cholesterol:</p>
+                                <p>{item.cholesterol_mg}mg</p>
+                            </div>
+                            <div>
+                                <p>Saturated Fat:</p>
+                                <p>{item.fat_saturated_g}g</p>
+                            </div>
+                            <div>
+                                <p>Total Fat:</p>
+                                <p>{item.fat_total_g}g</p>
+                            </div>
+                            <div>
+                                <p>Fiber:</p>
+                                <p>{item.fiber_g}g</p>
+                            </div>
+                            <div>
+                                <p>Potassium:</p>
+                                <p>{item.potassium_mg}mg</p>
+                            </div>
+                            <div>
+                                <p>Protein:</p>
+                                <p>{item.protein_g}g</p>
+                            </div>
+                            <div>
+                                <p>Sodium:</p>
+                                <p>{item.sodium_mg}mg</p>
+                            </div>
+                            <div>
+                                <p>Sugar:</p>
+                                <p>{item.sugar_g}g</p>
+                            </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                  
+                ))}
+
+
+            </div>
+        </div>
+    );
+}

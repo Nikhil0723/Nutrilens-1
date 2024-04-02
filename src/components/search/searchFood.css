@@ -2,7 +2,7 @@
     position: relative;
     margin: 2.5rem 0;
     flex: 1;
-    width: 640px;
+    width: 80vw;
 }
 
 .searchPage_Container {
@@ -24,4 +24,71 @@
     border-radius: 0.25rem;
     margin-right: 1.5rem;
     color: black;
+}
+
+.search_btn{
+    padding: 0.5rem 1rem;
+    
+}
+
+
+.results{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 40px;
+  
+}
+
+.result_card{
+  display: flex;
+  flex-direction: column;
+  min-width: 350px;
+  width: 400;
+  max-width: 500px;
+}
+
+.result_head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:0 15px;
+  background-color: white;
+  border-radius:5px;
+}
+
+
+
+.total_weight{
+  margin: 10px 0;
+  height: 40px;
+  width: 40px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: antiquewhite;
+}
+
+.result_content{
+  margin-top:15px;
+  padding-left: 20px;
+}
+.title{
+  font-size: 14px;
+}
+
+.nutrition_Information{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding:20px 15px;
+  background-color: white;
+  border-radius:5px;
+}
+
+.nutrition_Information div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

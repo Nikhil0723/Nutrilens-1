@@ -41,6 +41,25 @@ const ProductDataDisplay = ({ data }) => {
         <NutriScore score={product.nutrition_grades} extraClass="nutriscore__detail" />
         <NovaGroup group={product.nova_group} tag={product.nova_groups_tags} />
         <EcoScore score={product.ecoscore_grade} />
+        {
+      window.botpressWebChat.init({
+        "composerPlaceholder": "Chat with Nutri Asistent ",
+        "botConversationDescription": "Im here to assist you  just say hi ",
+        "botId": "7cfe4e41-832a-4112-9859-f60d11e61d0e",
+        "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+        "messagingUrl": "https://messaging.botpress.cloud",
+        "clientId": "7cfe4e41-832a-4112-9859-f60d11e61d0e",
+        "webhookId": "d149c281-fda4-45f8-8bcf-761b53b1db52",
+        "lazySocket": true,
+        "themeName": "prism",
+        "botName": "Nutri Asistent ",
+        "frontendVersion": "v1",
+        "useSessionStorage": true,
+        "enableConversationDeletion": true,
+        "theme": "prism",
+        "themeColor": "#2563eb"
+      })
+    }
       </div>
       {p !== undefined ?
         (<>
